@@ -51,7 +51,7 @@
 
 3. Откройте браузер и перейдите по адресу:
 
-   - React-приложение: [http://localhost:3000](http://localhost:3000)
+   - React-приложение: [http://localhost:5173](http://localhost:5173)
    - Mock API: [http://localhost:3001](http://localhost:3001)
 
 ## Структура проекта
