@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 import {
   Card,
   CardContent,
@@ -6,12 +6,12 @@ import {
   Typography,
   Button,
   Rating,
-} from "@mui/material";
-import { motion } from "framer-motion";
-import { useDispatch } from "react-redux";
-import { addToCart } from "../features/cartSlice";
+} from '@mui/material'
+import { motion } from 'framer-motion'
+import { useDispatch } from 'react-redux'
+import { addToCart } from '../features/cartSlice'
 const ProductCard = ({ product }) => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -24,35 +24,35 @@ const ProductCard = ({ product }) => {
           height: 400,
           margin: 2,
           boxShadow: 3,
-          display: "flex",
-          flexDirection: "column", // Элементы внутри будут располагаться вертикально
+          display: 'flex',
+          flexDirection: 'column', // Элементы внутри будут располагаться вертикально
         }}
       >
         <CardMedia
-          component="img"
-          height="170"
+          component='img'
+          height='170'
           image={product.image}
           alt={product.title}
           sx={{
-            objectPosition: "top", // Указывает, что изображение должно быть выровнено по верхнему краю
+            objectPosition: 'top', // Указывает, что изображение должно быть выровнено по верхнему краю
             marginBottom: 0, // Убирает отступ снизу изображения
             paddingBottom: 0, // Убирает отступы по нижнему краю
           }}
         />
-        <CardContent sx={{ paddingTop: 0, marginTop: "auto" }}>
-          <Typography variant="h6">{product.title}</Typography>
-          <Typography variant="body2">{product.description}</Typography>
-          <Typography variant="h5">{product.price}$</Typography>
+        <CardContent sx={{ paddingTop: 0, marginTop: 'auto' }}>
+          <Typography variant='h6'>{product.title}</Typography>
+          <Typography variant='body2'>{product.description}</Typography>
+          <Typography variant='h5'>{product.price}$</Typography>
           {/* Рейтинг со звёздочками */}
           <Rating
             value={product.rating}
-            precision={0.5}
+            precision={0.1}
             readOnly
             sx={{ mt: 1 }}
           />
 
           <Button
-            variant="contained"
+            variant='contained'
             onClick={() => dispatch(addToCart(product))}
             sx={{ mt: 2 }}
           >
@@ -61,6 +61,6 @@ const ProductCard = ({ product }) => {
         </CardContent>
       </Card>
     </motion.div>
-  );
-};
-export default ProductCard;
+  )
+}
+export default ProductCard
